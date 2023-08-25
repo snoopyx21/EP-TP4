@@ -1,0 +1,25 @@
+RÉSEAU Geant
+
+MATRICE - comment s'en servir ?
+
+(x,y,g) : traffic en Giga/bits de x à y - quantité énorme 
+matrice de traffic : topogravité - estimation du traffic du réseau GEANT (15 MIN)
+
+M[x][y] = décomposer en flux TCP = ressemble  -> ZIPF ou Pareno borné (distribution de Pareto)
+utilisation de distribution - topo réaliste et flux réaliste 
+nb de paquets decompositoon en sous flux du G/bits -> nb de paquets très faible 
+deux ou trois boucles - tous les elems de la matrice et tant que je n'ai pas décomposé un élém en sous-flux en au moins X(10) sous-flux
+tirage aléatoire -> regarder si on est pas 2 fois supérieur, on continue si on est supérieur ou égal
+taille fixe des paquets : 1000 ou 1500
+
+le temps : pas besoin de respecter 15 min -> 5 min si on veut stresser notre simulation
+tcp send SIZE at 
+deuxieme distribution : random (uniforme dans le temps)
+petite pic d'activité au milieu possible
+les flux ne démarrent pas tous au même moment - dispersion uniforme [0 - 4.5]
+30 secondes avant la fin tous les flux doivent avoir démarrer
+80 % petits flux représentent 20% du traffic : au dela de 100 000 flux
+
+
+utilisation de mode on/off -> 10% TCP 90% Mode on/off = au moins 1 flux témoin TCP
+analysez qualité de vie des flux TCP
